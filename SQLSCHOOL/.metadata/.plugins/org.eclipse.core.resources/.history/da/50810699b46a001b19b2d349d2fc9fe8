@@ -1,0 +1,9 @@
+package Test_1;
+
+public class Noeud {
+	
+	private String token;
+	public Noeud(String token) {
+		
+	}
+}

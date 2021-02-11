@@ -1,0 +1,22 @@
+package Test_1;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+public class app {
+	public static void main(String[] args) {
+	
+			Tree tree = new Tree();
+			tree.inserer("select");
+			tree.inserer("*");
+			
+			tree.inserer("fin");
+			tree.inserer("select");
+			tree.inserer("id");
+			
+			System.out.println(tree);
+			System.out.println(tree.dislay(););
+	}
+}

@@ -1,0 +1,8 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+public class Transition extends MapSite {
+	
+	
+	private State etat1;
+	private State etat2;
+ }

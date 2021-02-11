@@ -1,0 +1,12 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+public abstract class State {
+	private Token token;
+
+	public State(Token token) {
+		super();
+		this.token = token;
+	}
+	
+
+}

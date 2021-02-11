@@ -1,0 +1,15 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+public class StateN extends State {
+	
+	private Token token;
+
+	public StateN(Token token) {
+		super(token);
+	}
+
+	public String getToken() {
+		return token;
+	}
+	
+}

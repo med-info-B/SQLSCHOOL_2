@@ -1,0 +1,24 @@
+package Test_1;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Stack;
+
+public class app {
+	public static void main(String[] args) {
+		
+		Stack<String> ss = new Stack<String>();
+		ss.add("a");
+		ss.add("b");
+		ss.add("c");
+		List<Stack<String>> l = new ArrayList<Stack<String>>();
+		l.add((Stack<String>) ss.clone());
+		System.out.println("avant " +ss.firstElement());
+		ss.removeAllElements();
+	
+		System.out.println("aaa \n bbb " + l.get(0));
+
+	}
+}

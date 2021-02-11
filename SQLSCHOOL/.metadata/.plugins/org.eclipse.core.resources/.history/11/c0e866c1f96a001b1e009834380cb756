@@ -1,0 +1,32 @@
+package Test_1;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+public class app {
+	public static void main(String[] args) {
+	
+//			Tree tree = new Tree();
+//			tree.inserer("select");
+//			tree.inserer("*");
+//			
+//			tree.inserer("fin");
+//			tree.inserer("select");
+//			//tree.inserer("id");
+//			
+//			System.out.println(tree);
+//			//System.out.println(tree);
+		
+		
+		
+		List<String> ll = new ArrayList<String>();
+		
+		ll.add("A");
+		ll.add("b");
+		
+		int i = 0;
+		System.out.println("--> "+ll.add("A")"+ll.get(i+1));
+	}
+}

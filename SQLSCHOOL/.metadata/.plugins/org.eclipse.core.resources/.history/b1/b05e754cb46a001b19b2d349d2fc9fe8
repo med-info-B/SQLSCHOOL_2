@@ -1,0 +1,15 @@
+package Test_1;
+
+public class A {
+	String name;
+	public A(String a) {
+		name = a;
+	}
+	
+	
+	String getA() {
+		return name;
+	}
+	
+	
+}

@@ -1,0 +1,42 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+import java.util.List;
+import java.util.Stack;
+
+import apprendreSQL.Model.analysisTypeMetier.semantic.Observers;
+
+public class ParserSQL2 implements Observers{
+	
+	Stack<String> s1;
+	Stack<String> s2;
+	List<Stack<String>>  s3;
+	
+	public ParserSQL2() {
+		s1 = new Stack<String>();
+		s2 = new Stack<String>();
+	}
+	
+	
+
+	
+	
+	@Override
+	public void notifyEventEleve(String token) {
+		s1.add(token);
+	}
+	
+	
+	@Override
+	public void notifyEventProf(String token) {
+		if(token.equals("fin")) {
+			s3.add(s2);
+			s2.removeAllElements();
+		} else {
+			s2.add(token);
+		}
+	}
+		
+	
+	
+
+}

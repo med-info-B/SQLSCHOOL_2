@@ -1,0 +1,8 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.general;
+
+import java.io.InputStream;
+
+public interface ParserSQL {
+	default  public void sqlStmtList()  throws ParseException {};
+	default  public void ReInit(InputStream stream) {};
+}

@@ -1,0 +1,20 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+import apprendreSQL.Model.analysisTypeMetier.semantic.Observers;
+
+public class ParserSQL2 implements Observers{
+	
+	
+	
+
+	
+	
+	@Override
+	public void notifyEventEleve(String token) {
+		Observers.super.notifyEventEleve(token);
+	}
+		
+	
+	
+
+}

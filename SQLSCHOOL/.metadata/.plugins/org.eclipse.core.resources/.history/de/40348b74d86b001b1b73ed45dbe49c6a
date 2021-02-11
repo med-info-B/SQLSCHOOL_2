@@ -1,0 +1,124 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
+import apprendreSQL.Controller.Controller;
+import apprendreSQL.Model.analysisTypeMetier.syntax.general.ParseException;
+import apprendreSQL.Model.analysisTypeMetier.syntax.general.ParserSQL;
+import apprendreSQL.Model.data.Factory;
+import apprendreSQL.Model.data.Observers;
+
+/**
+ * 
+ *  Cette a comme responsabilité la compilation d'une requête relativement à une question
+ *
+ */
+public class ParserSQL2 implements  Observers, ParserSQL {
+	// liste token pour la requête de l'élève
+	private Stack<String> p_token_eleve;
+	// liste token pour la requête d un prof
+	private Stack<String> p_token_prof;
+	// list de pile contenant les tokens du prof
+	private List<Stack<String>>  list_p_token;
+	// list de reponses de prof
+	private List<String> reponses;
+	// parseur général
+	private ParserSQL parser;
+	// controlle
+	private Controller controller;
+
+	
+	
+	public ParserSQL2() {
+		initiation();
+	}
+	
+	/**
+	 *  setter 
+	 */
+	@Override
+	public void setcontroller(Controller controller) {
+			this.controller = controller;
+	}
+	
+	/**
+	 *  mis à jour de l'attribut reponses et automatiquement la reprise de l'analyse
+	 */
+	@Override
+	public void updateReponses(List<String> repones) {
+		this.reponses = repones;
+		start();
+	}
+	
+	/**
+	 *  analyse de la requête du prof
+	 */
+	private void start() {
+		try {
+			for(String s : reponses) {
+				parser.ReInit(Factory.translateToStream(s));
+				parser.sqlStmtList();
+			}
+		} catch (ParseException e){
+			controller.getView().sendMessage(" Requette prof  : "+e.getMessage());
+		}
+		
+	}
+	
+	/**
+	 *  initiation des attributes
+	 */
+	private void initiation() {
+		this.p_token_eleve = Factory.makeStack();
+		this.p_token_prof = Factory.makeStack();
+		
+		this.list_p_token =  Factory.makeList();
+		parser = Factory.makeParserSQL("general");
+		parser.registerObserver(this);
+		parser.setDestination("prof");
+	}
+	
+	/**
+	 *  notification envoyé par le parseur général concernant un elève
+	 */
+	@Override
+	public void notifyEventEleve(String token) {
+		p_token_eleve.add(token);
+	}
+	
+	/**
+	 *  notification envoyé par le parseur général concernant un proffeseur
+	 */
+	@Override
+	public void notifyEventProf(String token) {
+		if(token.equals("fin")) {
+			list_p_token.add(p_token_prof);
+			p_token_prof.removeAllElements();
+		} else {
+			p_token_prof.add(token);
+		}
+	}
+	
+	
+	
+	public void display() {
+		System.out.println("tostring");
+		StringBuilder ss = new StringBuilder();
+		for(Stack<String> d : list_p_token) {
+			for(String a : d)
+				System.out.println(a);
+			System.out.println("\n");
+		}
+	}
+	
+	
+
+    
+	
+		
+	
+	
+
+}

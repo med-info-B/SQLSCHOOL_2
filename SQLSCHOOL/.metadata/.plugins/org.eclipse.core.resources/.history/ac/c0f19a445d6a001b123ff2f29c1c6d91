@@ -1,0 +1,76 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import apprendreSQL.Controller.Protocol;
+import apprendreSQL.Model.analysisTypeMetier.semantic.Observers;
+import apprendreSQL.Model.analysisTypeMetier.syntax.general.ParseException;
+import apprendreSQL.Model.analysisTypeMetier.syntax.general.ParserSQL;
+import apprendreSQL.Model.data.Factory;
+
+public class Machine {
+	
+	private String requeste;
+	private ParserSQL parser;
+	private InputStream stream;
+	private List<State> states;
+	private List<Transition> transitions;
+	private Automate automate;
+	private Action action;
+	 State etat;
+
+	public Machine(List<String> reponses) throws ParseException {
+		states = new ArrayList<State>();
+		transitions = new ArrayList<Transition>();
+		automate = new Automate();
+		action = new Action();
+		this.parser = Factory.makeParserSQL();
+		parser.registerObserver(automate);
+		for(String s : reponses) {
+			parser.ReInit(Factory.translateToStream(s));
+		}
+
+	}
+	
+	public Action getAction() {
+		return action;
+	}
+	
+	private State findStateByToken(Token token) {
+		for(State s : states)
+		{
+			if(s.getToken().equals(token))
+				return s;
+		}
+		return null;
+	}
+	public void creationAutomate() {
+		automate.getGraphe().keySet().forEach( key -> 
+					{
+							states.add(new StateN(key));
+							
+					}
+		);
+		states.add(new Statefinal());
+		automate.getGraphe().forEach( (key,values) -> 
+			{
+				states.add(new StateN(key));
+				values.forEach( value -> 
+					{
+						if(findStateByToken(value) == null) {
+							
+						}
+					}
+				);
+
+			}
+		);
+		
+	
+		
+
+	}
+}

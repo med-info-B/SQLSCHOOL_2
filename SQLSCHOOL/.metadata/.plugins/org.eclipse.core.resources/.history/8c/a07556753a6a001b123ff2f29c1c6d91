@@ -1,0 +1,26 @@
+package apprendreSQL.Model.analysisTypeMetier.semantic;
+
+
+/**
+ * 
+ * @author mohammed
+ * Cette class Représente un token 
+ */
+public class Token {
+	
+	private String token;
+
+	public Token(String token) {
+		this.token = token;
+	}
+	
+	
+	/**
+	 * Gettter
+	 * @return un token de type String
+	 */
+	public String getString() {
+		return token;
+	}
+	
+}

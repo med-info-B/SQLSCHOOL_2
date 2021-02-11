@@ -1,0 +1,39 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import apprendreSQL.Model.analysisTypeMetier.semantic.Observers;
+
+public class Automate implements Observers {
+
+	private Map<Token, List<Token>> graphe;
+	private Token tokePrecedent;
+	private List<String> memory;
+	public Automate() {
+		graphe =  new LinkedHashMap<>();
+		memory = new ArrayList<>();
+	}
+	
+	
+	@Override
+	public void notifyEventProf(String token) {
+		memory.add();,
+		if(graphe.isEmpty()) {
+			graphe.put( new Token(token), new ArrayList<Token>());
+		} else if(!token.equals(";")) {
+			graphe.put(new Token(token), new ArrayList<Token>());
+			graphe.get(tokePrecedent).add(new Token(token));
+		
+		} else if(token.equals(";")) {
+			graphe.get(tokePrecedent).add(new Token(token));
+		}
+		tokePrecedent = new Token(token);
+	}
+	
+	
+	
+	
+}

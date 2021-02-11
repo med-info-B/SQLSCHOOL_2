@@ -1,0 +1,27 @@
+1612807989228	Rename package 'apprendreSQL.Model.analysisType.lexical'
+1612808042453	Rename package 'apprendreSQL.Model.analysisType.syntax'
+1612808085042	Rename package 'apprendreSQL.Model.analysisType.semantic'
+1612808187298	Copy package
+1612808209122	Move compilation unit
+1612808228107	Move compilation unit
+1612808237212	Move compilation unit
+1612808250818	Move compilation unit
+1612808263567	Delete element
+1612808310504	Rename package 'apprendreSQL.Model.analysisTypeMetier.syntax.general'
+1612808340991	Move compilation unit
+1612808356138	Move compilation unit
+1612808362726	Move compilation unit
+1612808369523	Move compilation unit
+1612808487425	Move compilation unit
+1612808517060	Move compilation unit
+1612972747262	Delete element
+1612972750750	Delete element
+1612972753869	Delete element
+1612972756601	Delete element
+1612972758703	Delete element
+1612972765122	Delete element
+1612972768332	Delete element
+1612972770566	Delete element
+1612972773026	Delete element
+1612976885414	Rename type 'ParserSQL'
+1612978264948	Move compilation unit

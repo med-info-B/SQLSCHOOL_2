@@ -1,0 +1,11 @@
+package apprendreSQL.Model.analysisType.semantic;
+
+public class Token {
+	
+	Stirng token;
+
+	public Token(Stirng token) {
+		this.token = token;
+	}
+	
+}

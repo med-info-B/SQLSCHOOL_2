@@ -1,0 +1,45 @@
+package Test_1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Noeud {
+	
+	private String token;
+	private List<Noeud> noeuds;
+	public Noeud(String token) {
+		this.token = token;
+		noeuds = new ArrayList<Noeud>();
+	}
+	
+	public Noeud() {
+		noeuds = new ArrayList<Noeud>();
+	}
+	
+	public void setToken(String token) {
+		this.token = token;
+	}
+	
+	void addFin(String token){
+		noeuds.add(new Noeud(token));
+	}
+	
+	List<Noeud> getList(){
+		return noeuds;
+	}
+	
+	public boolean isComplete() {
+		for(Noeud n : noeuds) {
+			if(n.getToken().equals("fin")) {
+				return true;
+			}
+		}
+	}
+	
+	
+	
+	
+	String getToken() {
+		return token;
+	}
+}

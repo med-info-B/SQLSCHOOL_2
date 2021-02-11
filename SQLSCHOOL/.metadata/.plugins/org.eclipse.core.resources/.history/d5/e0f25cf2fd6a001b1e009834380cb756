@@ -1,0 +1,72 @@
+package Test_1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Tree {
+	
+	private Noeud root;
+	private boolean visited;
+	private int memoryIndice;
+	public Tree() {
+		visited = false;
+		memoryIndice = 0;
+	}
+	
+	
+	
+	public void inserer(String token) {
+		if(root == null) {
+			System.out.println("1 -> "+token);
+			root = new Noeud(token);
+			return;
+		} else {
+			if(root.equal(token) && !visited) {
+				System.out.println("2 -> "+token);
+				visited = true;
+				return ;
+			} else {
+				System.out.println("3 -> "+token);
+
+				test(root.next(memoryIndice), memoryIndice, token);
+			}
+		}	
+	}
+
+	private void test(Noeud n, int i,String token) {
+		if( n == null ) {
+			return ;
+		}
+		if(!n.isComplete()) {
+			n.addFin(token);
+			return;
+		} else {
+			if(n.equal(token)) {
+				System.out.println("l autre ");
+
+				test( n.next(i++), i, token);
+			} else {
+				if(i > 0) {
+					 test( n.next(i - 1), i, token);
+				} else {
+					 test( n.next(i), i, token);
+				}
+			}
+		}	
+	}
+	
+	
+	
+	public void dislay() {
+		System.out.println("root : "+ root.getToken());
+		for(Noeud n : root.List()) {
+			System.out.println(" --> "+ n.getToken());
+		}
+	}
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,107 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
+import apprendreSQL.Model.analysisTypeMetier.syntax.general.ParseException;
+import apprendreSQL.Model.analysisTypeMetier.syntax.general.ParserSQL;
+import apprendreSQL.Model.data.Factory;
+import apprendreSQL.Model.data.Observers;
+
+/**
+ * 
+ *  Cette a comme responsabilité la compilation d'une requête relativement à une question
+ *
+ */
+public class ParserSQL2 implements  Observers, ParserSQL {
+	
+	private Stack<String> s1;
+	private Stack<String> s2;
+	private List<Stack<String>>  s3;
+	private List<String> reponses;
+	private ParserSQL parser; 
+
+	
+	
+	public ParserSQL2() {
+		initiation();
+	}
+	
+	@Override
+	public void updateReponses(List<String> repones) {
+		this.reponses = repones;
+		start();
+		
+	}
+	
+	private void start() {
+		
+		try {
+		//	for(String s : reponses) {
+				parser.ReInit(Factory.translateToStream(reponses.get(0)));
+				parser.sqlStmtList();
+		//	}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/**
+	 *  initiation des attributes
+	 */
+	private void initiation() {
+		this.s1 = Factory.makeStack();
+		this.s2 = Factory.makeStack();
+		
+		this.s3 =  Factory.makeList();
+		parser = Factory.makeParserSQL("general");
+		parser.registerObserver(this);
+		parser.setDestination("prof");
+	}
+	
+	/**
+	 *  notification envoyé par le parseur général concernant un elève
+	 */
+	@Override
+	public void notifyEventEleve(String token) {
+		System.out.println(" notify "+token);
+		s1.add(token);
+	}
+	
+	/**
+	 *  notification envoyé par le parseur général concernant un proffeseur
+	 */
+	@Override
+	public void notifyEventProf(String token) {
+		System.out.println(" -> notify prof "+token);
+		if(token.equals("fin")) {
+			s3.add(s2);
+			s2.removeAllElements();
+		} else {
+			s2.add(token);
+		}
+	}
+	
+	
+	/**
+	 * @author 
+	 *  redifinition d'un toString consisant à renvoyer une chaine de caractère 
+	 */
+	public String toString(){
+		StringBuilder ss = new StringBuilder();
+		for(Stack<String> d : s3) {
+			for(String a : d)
+				ss.append(a);
+			ss.append("\n");
+		}
+		return ss.toString();		
+	}
+	
+	
+		
+	
+	
+
+}

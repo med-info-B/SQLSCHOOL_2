@@ -1,0 +1,5 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.general;
+
+public interface ParserSQL {
+	Default final public void sqlStmtList()  {};
+}

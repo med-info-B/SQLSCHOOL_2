@@ -1,0 +1,8 @@
+package apprendreSQL.Model.analysisTypeMetier.semantic;
+
+import org.graalvm.compiler.nodes.NodeView.Default;
+
+public interface Observers {
+	void notifyEventEleve(String token);
+	Default void notifyEventProf(String token) {};
+}

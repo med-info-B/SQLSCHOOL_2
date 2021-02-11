@@ -1,0 +1,19 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+import java.util.List;
+/**
+ * cette a comme responsabilité de modélition l'action
+ * @author mohammed
+ *
+ */
+public class Action {
+	/**
+	 *  cette attribut consitute l'entrée de la machine
+	 */
+	List<Token> tokens_input;
+	
+	public Action() {
+		tokens_input = new ArrayList<>();
+	}
+	
+}

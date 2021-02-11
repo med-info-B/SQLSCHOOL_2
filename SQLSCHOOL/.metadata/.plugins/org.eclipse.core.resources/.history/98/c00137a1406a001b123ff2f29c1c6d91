@@ -1,0 +1,8 @@
+package Test_1;
+
+public class A {
+	string name;
+	public A(Strign a) {
+		name = a;
+	}
+}

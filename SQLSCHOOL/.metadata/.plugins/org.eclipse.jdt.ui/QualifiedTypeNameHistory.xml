@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+    <fullyQualifiedTypeName name="Test_1.A"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.syntax.particular.Automate"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.syntax.particular.Action"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.syntax.particular.StateN"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.syntax.particular.Token"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.syntax.particular.MapSite"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.syntax.particular.State"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.syntax.particular.Transition"/>
+    <fullyQualifiedTypeName name="Test_1.Tree"/>
+    <fullyQualifiedTypeName name="Test_1.Noeud"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.semantic.Observers"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="org.graalvm.compiler.nodes.NodeView.Default"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="java.lang.Throwable"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.syntax.general.ParserSQL"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.data.Observers"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.syntax.general.ParserSQL1"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.data.Question"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Controller.Controller"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.syntax.particular.ParserSQL2"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.data.Factory"/>
+    <fullyQualifiedTypeName name="java.util.Stack"/>
+    <fullyQualifiedTypeName name="apprendreSQL.Model.analysisTypeMetier.syntax.general.ParseException"/>
+</qualifiedTypeNameHistroy>

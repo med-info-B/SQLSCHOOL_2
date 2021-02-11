@@ -1,0 +1,28 @@
+[ 
+			{
+				"id" : 1,
+				"question" : "Afficher tout les films",
+				"reponses" :   ["select * from t;","select a,b from t;"],
+				"scriptAfter": [ {
+				                    "id" : 1,
+				                    "test" : "  " ,
+				                    "discription" : ""  
+				                 }	
+				               ],
+				"scriptBefor": []
+			},
+			{
+				"id" : 2		 ,
+				"question" : " Afficher les filmes commenté par au 3 personnes",
+				"reponses" :   [],
+				"scriptAfter": [],
+				"scriptBefore": []
+			},
+			{
+				"id" : 3,   
+				"question" : " supprimer tout les films qui ont date inferieur à", 
+				"reponses" :   [],
+				"scriptAfter": [],
+				"scriptBefore": []
+			}
+]

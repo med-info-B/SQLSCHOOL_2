@@ -1,0 +1,55 @@
+package Test_1;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Graph {
+	
+	
+	private List<Noeud> noeuds_base;
+	private boolean active;
+	private int index;
+	public Graph() {
+		noeuds_base =new LinkedList<Noeud>();
+		active = false;
+		index = 0;
+	}
+	
+	
+	public void inserer(String token) {
+		explore(noeuds_base, token);
+	}
+	
+	
+	private void explore(List<Noeud> list, String token) {
+		if(!isComplete(list)) {
+			list.add(new Noeud(token));
+			return;
+		} else {
+			if(active) {
+				list.add(new Noeud(token));
+				return;
+			} else {
+				
+			}
+		}
+	}
+	
+	
+	public boolean isComplete(List<Noeud> ll) {
+		
+		for(Noeud n : ll)
+		{
+			if(n.equal("fin")) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,33 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import apprendreSQL.Model.analysisTypeMetier.semantic.Observers;
+/**
+ * cette a comme responsabilité de modélition l'action
+ * @author mohammed
+ *
+ */
+public class Action implements Observers {
+	/**
+	 *  cette attribut consitute l'entrée de la machine
+	 */
+	private List<Token> tokens_input;
+	private int curseur;
+	
+	public Action() {
+		tokens_input = new ArrayList<>();
+		curseur = 0;	
+	}
+	@Override
+	public void notifyEventEleve(String token) {
+		tokens_input.add(new Token(token));
+	}
+	
+	public String readToken() {
+		if(curseur < tokens_input.size())
+		return tokens_input.get(curseur);
+	}
+	
+}

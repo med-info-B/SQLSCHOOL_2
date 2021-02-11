@@ -1,0 +1,19 @@
+package Test_1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Noeud {
+	
+	private String token;
+	private List<Noeud> noeuds;
+	public Noeud(String token) {
+		token = token;
+		noeuds = new ArrayList<Noeud>();
+	}
+	
+	
+	String getToken() {
+		return token;
+	}
+}

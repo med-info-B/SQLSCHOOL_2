@@ -1,0 +1,33 @@
+package Test_1;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+public class app {
+	public static void main(String[] args) {
+		Map<A,List<A>> mm = new LinkedHashMap<>();
+		System.out.println("is empty : "+ mm.isEmpty());
+		A a = new A("A");
+		mm.put(a, new ArrayList<A>());
+			mm.get(a).add(new A("a"));		
+			mm.get(a).add(new A("a"));
+		a = new A("F");
+		mm.put(a, new ArrayList<A>());	
+			mm.get(a).add(new A("a"));		
+			mm.get(a).add(new A("a"));
+
+//		mm.forEach((c,v) -> 
+//			{
+//				System.out.print(" * key :  "+c.getA() +"\n");
+//				v.forEach( e ->   System.out.println("  -> Value : "+ e.getA()));
+//			}
+//		
+//		);
+		
+
+		
+		
+	}
+}

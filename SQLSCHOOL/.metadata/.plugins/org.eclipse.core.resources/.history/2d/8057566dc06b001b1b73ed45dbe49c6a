@@ -1,0 +1,66 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
+import apprendreSQL.Model.analysisTypeMetier.semantic.Observers;
+
+public class ParserSQL2 implements Observers{
+	
+	private Stack<String> s1;
+	private Stack<String> s2;
+	private List<Stack<String>>  s3;
+	private List<String> reponses;
+	
+	
+	public ParserSQL2() {
+		initiation();
+	}
+	
+	
+	private void initiation() {
+		this.s1 = new Stack<String>();
+		this.s2 = new Stack<String>();
+		this.s3 = new ArrayList<Stack<String>>();
+	}
+	
+	
+	@Override
+	public void notifyEventEleve(String token) {
+		System.out.println(" notify "+token);
+		s1.add(token);
+	}
+	
+	
+	@Override
+	public void notifyEventProf(String token) {
+		System.out.println(" -> notify prof "+token);
+		if(token.equals("fin")) {
+			s3.add(s2);
+			s2.removeAllElements();
+		} else {
+			s2.add(token);
+		}
+	}
+	
+	/**
+	 * @author mohammed
+	 * 
+	 */
+	public String toString() {
+		StringBuilder ss = new StringBuilder();
+		for(Stack<String> d : s3) {
+			for(String a : d)
+				ss.append(a);
+			ss.append("\n");
+		}
+		return ss.toString();		
+	}
+	
+	
+		
+	
+	
+
+}

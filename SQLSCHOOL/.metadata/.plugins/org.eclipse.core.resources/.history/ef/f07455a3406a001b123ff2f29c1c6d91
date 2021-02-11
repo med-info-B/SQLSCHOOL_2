@@ -1,0 +1,11 @@
+package Test_1;
+
+public class A {
+	String name;
+	public A(Strign a) {
+		name = a;
+	}
+	
+	
+	
+}

@@ -1,0 +1,16 @@
+package apprendreSQL.Model.analysisType.semantic;
+
+public class Token {
+	
+	private String token;
+
+	public Token(String token) {
+		this.token = token;
+	}
+	
+	
+	public String getString() {
+		return token;
+	}
+	
+}

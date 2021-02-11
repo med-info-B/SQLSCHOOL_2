@@ -1,0 +1,59 @@
+package apprendreSQL.Model.analysisTypeMetier.syntax.particular;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import apprendreSQL.Model.analysisTypeMetier.semantic.Observers;
+
+public class Automate implements Observers {
+
+	private Map<Token, List<Token>> graphe;
+	private Token tokePrecedent;
+	private List<Token> memory;
+	private int index;
+	public Automate() {
+		graphe =  new LinkedHashMap<>();
+		memory = new ArrayList<>();
+		index = 0;
+	}
+	
+	
+	@Override
+	public void notifyEventProf(String token) {
+		memory.add(new Token(token));
+		if(graphe.isEmpty()) {
+			graphe.put( new Token(token), new ArrayList<Token>());
+		} else if(!token.equals(";")) {
+			if(!isPresent(token)) {
+				graphe.put(new Token(token), new ArrayList<Token>());
+				graphe.get(tokePrecedent).add(new Token(token));
+			}
+		
+		} else if(token.equals(";")) {
+			graphe.get(tokePrecedent).add(new Token(token));
+			index = 0;
+		}
+		tokePrecedent = new Token(token);
+	}
+	
+	/**
+	 *  Predicate
+	 * @param token
+	 * @return
+	 */
+	private boolean isPresent(String token) {
+		if(memory.get(index).getString().equals(token)) {
+			index++;
+			return true ;
+		}
+		else {
+			if(memory.get(index + 1).equals(token))
+			return false;
+		}		
+	}
+	
+	
+	
+}

@@ -1,0 +1,15 @@
+package Test_1;
+
+public class Noeud {
+	
+	private String token;
+	private List<Noeud> noeuds;
+	public Noeud(String token) {
+		token = token;
+	}
+	
+	
+	String getToken() {
+		return token;
+	}
+}

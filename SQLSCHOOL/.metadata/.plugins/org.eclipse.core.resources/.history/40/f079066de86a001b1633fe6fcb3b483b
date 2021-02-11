@@ -1,0 +1,50 @@
+package Test_1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Tree {
+	
+	private Noeud root;
+	private boolean visited;
+	public Tree() {
+		visited = false;
+	}
+	
+	
+	
+	public void inserer(String token) {
+		if(root == null) {
+			root = new Noeud(token);
+			return;
+		} else {
+			if(root.equal(token) && !visited) {
+				visited = true;
+				return ;
+			} else {
+				test(root.next(0), 0, token);
+			}
+		}	
+	}
+
+	private void test(Noeud n, int i,String token) {
+		if(!n.isComplete()) {
+			n.addFin(token);
+			return;
+		} else {
+			if(n.equal(token)) {
+				test( n.next(i), i++, token);
+			} else {
+				if(i > 0) {
+					 test( n.next(i), i, token);
+				}
+			}
+		}	
+	}
+	
+	
+	
+	
+	
+
+}
